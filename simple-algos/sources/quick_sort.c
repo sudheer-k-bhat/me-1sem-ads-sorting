@@ -10,12 +10,9 @@ static int32_t _partition(int32_t list[], int32_t start, int32_t end){
     int32_t up = start, down = end;
     int32_t pivot = list[start];
     do{
-        while(list[up] <= pivot && up <= down){
-            ++up;
-        }
-        while(list[down] > pivot && up <= down){
-            --down;
-        }
+        //second condition to avoid out of bounds
+        while(list[up] <= pivot && up <= down){ ++up; }
+        while(list[down] > pivot && up <= down){ --down; }
         //if all elements aren't scanned, swap up & down els & continue.
         if(up <= down){
             _swap_(&list[up], &list[down]);
