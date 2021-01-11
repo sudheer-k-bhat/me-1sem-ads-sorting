@@ -48,33 +48,6 @@ void insertion_sort(int32_t list[], uint32_t size){
     }
 }
 
-static uint32_t _partition_(int32_t list[], uint32_t start, uint32_t end){
-    uint32_t up = start, down = end;
-    int32_t pivot = list[start];
-    do{
-        while(list[up] <= pivot && up <= down){
-            ++up;
-        }
-        while(list[down] > pivot && up <= down){
-            --down;
-        }
-        if(up <= down){
-            _swap_(&list[up], &list[down]);
-        }
-    }while(up <= down);
-    _swap_(&list[down], &list[start]);
-    return down;
-}
-
-void quick_sort(int32_t list[], int32_t start, int32_t end){
-    int32_t mid;
-    if(start < end){
-        mid = _partition_(list, start, end);
-        quick_sort(list, start, mid - 1);
-        quick_sort(list, mid + 1, end);
-    }
-}
-
 static void _merge_(int32_t list[], int32_t low, int32_t mid, int32_t high){
     int32_t temparray[ARR_SIZE];
     int32_t f_index = low, s_index = mid + 1, t_index = low;

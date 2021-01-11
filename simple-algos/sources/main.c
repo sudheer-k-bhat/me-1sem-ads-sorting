@@ -3,6 +3,7 @@
 #include <assert.h>
 
 #include "sort.h"
+#include "quick_sort.h"
 
 void print(int32_t arr[], uint32_t size){
     printf("\narr[%d]:", size);
@@ -41,9 +42,18 @@ void test_insertion_sort(){
     assert_sorting(arr, size);
 }
 
+void test_quick_sort(){
+    int32_t arr[] = {25,15,53,76,8,67,30,92,41,84};
+    uint32_t size = 10;
+    quick_sort(arr, 0, size - 1);
+    print(arr, size);
+    assert_sorting(arr, size);
+}
+
 int main(){
     test_bubble_sort();
     test_selection_sort();
     test_insertion_sort();
+    test_quick_sort();
     return 0;
 }
