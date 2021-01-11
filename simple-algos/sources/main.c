@@ -34,8 +34,16 @@ void test_selection_sort(){
     assert_sorting(arr, size);
 }
 
+void test_insertion_sort(){
+    int32_t arr[] = {25,15,53,76,8,67,30,92,41,84};
+    uint32_t size = 10;
+    insertion_sort(arr, size);
+    assert_sorting(arr, size);
+}
+
 int main(){
     test_bubble_sort();
     test_selection_sort();
+    test_insertion_sort();
     return 0;
 }

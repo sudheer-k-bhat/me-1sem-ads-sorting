@@ -34,15 +34,17 @@ void selection_sort(int32_t list[], uint32_t size){
 }
 
 void insertion_sort(int32_t list[], uint32_t size){
-    int32_t pass, key, index;
-    for(pass = 1; pass < size; ++pass){
+    //Since index will reach -ve values in this algo, don't use uint
+    int32_t pass, index, key;
+    for (pass = 1; pass < size; ++pass)
+    {
+        index = pass-1;
         key = list[pass];
-        index = pass - 1;
         while(index >= 0 && list[index] > key){
-            list[index + 1] = list[index];
+            list[index+1] = list[index];
             --index;
         }
-        list[index + 1] = key;
+        list[index+1] = key;
     }
 }
 
