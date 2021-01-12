@@ -47,37 +47,3 @@ void insertion_sort(int32_t list[], uint32_t size){
         list[index+1] = key;
     }
 }
-
-static void _merge_(int32_t list[], int32_t low, int32_t mid, int32_t high){
-    int32_t temparray[ARR_SIZE];
-    int32_t f_index = low, s_index = mid + 1, t_index = low;
-    while(f_index <= mid && s_index <= high){
-        if(list[f_index] < list[s_index]){
-            temparray[t_index++] = list[f_index++];
-        }else{
-            temparray[t_index++] = list[s_index++];
-        }
-    }
-    if(f_index > mid){
-        while(s_index <= high){
-            temparray[t_index++] = list[s_index++];
-        }
-    }else{
-        while(f_index <= mid){
-            temparray[t_index++] = list[f_index++];
-        }
-    }
-    for(int32_t k = low; k < high; ++k){
-        list[k] = temparray[k];
-    }
-}
-
-void merge_sort(int32_t list[], int32_t low, int32_t high){
-    int32_t mid;
-    if(low < high){
-        mid = (low + high) / 2;
-        merge_sort(list, low, mid);
-        merge_sort(list, mid + 1, high);
-        _merge_(list, low, mid, high);
-    }
-}
