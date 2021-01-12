@@ -1,10 +1,5 @@
 #include "quick_sort.h"
-
-static void _swap_(int32_t *val1, int32_t* val2){
-    int32_t temp = *val1;
-    *val1 = *val2;
-    *val2 = temp;
-}
+#include "utils.h"
 
 static int32_t _partition(int32_t list[], int32_t start, int32_t end){
     int32_t up = start, down = end;

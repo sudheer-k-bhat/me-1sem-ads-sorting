@@ -1,12 +1,8 @@
 #include <stdint.h>
 
-#define ARR_SIZE 100
+#include "utils.h"
+#include "constants.h"
 
-static void _swap_(int32_t *val1, int32_t* val2){
-    int32_t temp = *val1;
-    *val1 = *val2;
-    *val2 = temp;
-}
 void bubble_sort(int32_t list[], uint32_t size){
     for (uint32_t pass = 0; pass < size - 1; pass++)
     {

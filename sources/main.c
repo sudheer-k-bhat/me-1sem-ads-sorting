@@ -72,7 +72,6 @@ void test_heap_sort(){
     uint32_t size = 10;
     Heap* heap = heap_new(arr, size);
     heap = heap_sort(heap);
-    print(heap->data, heap->size+1);
     assert_sorting(heap->data, heap->size+1);
 }
 

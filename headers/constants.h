@@ -1,1 +1,2 @@
 #define MAX_HEAP_SIZE 12
+#define ARR_SIZE 100
