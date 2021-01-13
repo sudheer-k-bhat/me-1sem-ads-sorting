@@ -59,11 +59,10 @@ void test_merge_lists(){
 }
 
 void test_merge_sort(){
-    int32_t arr[] = {25,15,53};//,76,8,67,30,92,41,84
-    uint32_t size = 3;
+    int32_t arr[] = {25,15,53,76,8,67,30,92,41,84};
+    uint32_t size = 10;
     merge_sort(arr, 0, size - 1);
-    print(arr, size);
-    // assert_sorting(arr, size);
+    assert_sorting(arr, size);
 }
 
 void test_heap_sort(){
@@ -80,7 +79,7 @@ int main(){
     test_selection_sort();
     test_insertion_sort();
     test_quick_sort();
-    // test_merge_sort();
+    test_merge_sort();
     test_heap_sort();
     return 0;
 }

@@ -45,8 +45,6 @@ static void _merge(int32_t list[], int32_t low, int32_t mid, int32_t high){
             temparray[t_index++] = list[s_index++];
         }
     }
-    printf("<");
-    print1(temparray, 10);
     if(f_index > mid){
         while(s_index <= high){
             temparray[t_index++] = list[s_index++];
@@ -56,14 +54,10 @@ static void _merge(int32_t list[], int32_t low, int32_t mid, int32_t high){
             temparray[t_index++] = list[f_index++];
         }
     }
-    printf(">");
-    print1(temparray, 10);
-    for (int32_t k = low; k < high; ++k)
+    for (int32_t k = high; k >= low; --k)
     {
-        list[k] = temparray[k];
+        list[k] = temparray[--t_index];
     }
-    printf(">>");
-    print1(list, 10);
 }
 
 void merge_sort(int32_t list[], int32_t low, int32_t high){
